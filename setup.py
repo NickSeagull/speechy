@@ -4,6 +4,10 @@ setup(
     packages = ['speechy'],
     install_requires = ['hy>=0.10.0'],
     version = '0.1',
+    license = "MIT",
+    package_data = {
+        'speechy': ['*.hy'],
+    },
     description = 'A TDD/BDD framework for Hy',
     author = 'Nikita Tchayka',
     author_email = 'nikitatchayka@gmail.com',
