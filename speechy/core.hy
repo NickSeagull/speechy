@@ -25,3 +25,6 @@
 
 (defmacro should [expression-to-check]
   `(.assertTrue self ~expression-to-check msg))
+
+(defmacro should-not [expression-to-check]
+  `(.assertFalse self ~expression-to-check msg))
