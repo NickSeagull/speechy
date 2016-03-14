@@ -22,4 +22,4 @@ This example illustrates the basic usage of **speechy**:
     (should-not= 3 (- 7 4))))
 ```
 
-# Right now there's no runner, so, in case you want to run these tests, the most proper way should be by using `hy2py` and running nosetests on the file generated.
+**Right now there's no runner, so, in case you want to run these tests, the most proper way should be by using `hy2py` and running nosetests on the file generated.**
