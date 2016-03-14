@@ -23,27 +23,27 @@
            (setv msg ~should-message)
            ~@cases)])
 
-(defmacro before [function-body]
-  [setUp
-   `(fn [self]
-      ~function-body)])
+(defmacro before [&rest function-body]
+  `[setUp
+   (fn [self]
+      ~@function-body)])
 
-(defmacro after [function-body]
-  [tearDown
-   `(fn [self]
-      ~function-body)])
+(defmacro after [&rest function-body]
+  `[tearDown
+   (fn [self]
+      ~@function-body)])
 
-(defmacro before-all [function-body]
-  [setUpClass
-   (with-decorator classmethod
-    `(fn [self]
-       ~function-body))])
+(defmacro before-all [&rest function-body]
+    `[setUpClass
+      (with-decorator classmethod
+        (fn [self]
+          ~@function-body))])
 
-(defmacro after-all [function-body]
-  [tearDownClass
-   (with-decorator classmethod
-    `(fn [self]
-       ~function-body))])
+(defmacro after-all [&rest function-body]
+    `[tearDownClass
+     (with-decorator classmethod
+     (fn [self]
+        ~@function-body))])
 
 (defmacro should [expression-to-check]
   `(.assertTrue self ~expression-to-check msg))
