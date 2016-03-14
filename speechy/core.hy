@@ -22,3 +22,6 @@
          `(fn [self]
            (setv msg ~should-message)
            ~@cases)])
+
+(defmacro should [expression-to-check]
+  `(.assertTrue self ~expression-to-check msg))
